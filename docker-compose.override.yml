@@ -14,3 +14,4 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ~/.aspnet/https:/https:ro
+      - ~/diagnostics:/app/speedscope:rw

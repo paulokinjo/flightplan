@@ -101,12 +101,14 @@ namespace Api.Controllers
         [Route("{flightPlanId}")]
         public async Task<IActionResult> DeleteFlightPlan(string flightPlanId)
         {
+            Thread.Sleep(15000);
             var resultSuccess = await flightPlanDatabase.DeleteById(flightPlanId);
             if (resultSuccess)
             {
                 return NoContent();
             }
 
+            Thread.Sleep(20000);
             return NotFound();
         }
 

@@ -106,6 +106,7 @@ namespace Api.Data
 
         public async Task<bool> DeleteById(string id)
         {
+            Thread.Sleep(5000);
             var collection = GetCollection("local", "flightplans");
             var result = await collection.DeleteOneAsync(
                 Builders<BsonDocument>.Filter.Eq("flight_plan_id", id));
@@ -115,7 +116,7 @@ namespace Api.Data
 
         private IMongoCollection<BsonDocument> GetCollection(string databaseName, string collectionName)
         {
-            var client = new MongoClient("mongodb://localhost:27017");
+            var client = new MongoClient("mongodb://mongo:27017");
             var database = client.GetDatabase(databaseName);
             var collection = database.GetCollection<BsonDocument>(collectionName);
             return collection;
