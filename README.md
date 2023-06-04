@@ -31,3 +31,6 @@ Attaching to flightplan-api-1
 > https://localhost:3001/swagger/index.html
 
 <img  src="./imgs/FlightAPI.png"/>
+
+
+> Use the flightplans.json to load some data
